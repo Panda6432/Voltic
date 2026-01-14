@@ -1,11 +1,12 @@
 'use client'; 
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Loader2, AlertCircle, ShieldCheck, RefreshCw } from 'lucide-react';
 import { supabase } from '@/lib/supabaseClient';
 
-const VerifyOtpPage = () => {
+// Separate component that uses useSearchParams
+function VerifyOtpContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get('email') || '';
@@ -145,6 +146,22 @@ const VerifyOtpPage = () => {
         </div>
       </div>
     </div>
+  );
+}
+
+// Main component with Suspense boundary
+const VerifyOtpPage = () => {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen w-full bg-black flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="animate-spin text-[#FF3131]" size={48} />
+          <p className="text-white font-bold uppercase tracking-wider">Loading...</p>
+        </div>
+      </div>
+    }>
+      <VerifyOtpContent />
+    </Suspense>
   );
 };
 
