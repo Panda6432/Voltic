@@ -43,8 +43,8 @@ const VolticSection1 = () => {
       {/* === THE "SYNCED" COVER === */}
       <img 
         src="/poster.webp" 
-        alt="Loading Voltic Experience"
-        className={`absolute top-0 left-0 w-full h-full object-cover z-10 transition-opacity duration-500 ease-out ${
+ alt="Voltic Energy Drink can with bold red design showing pure adrenaline branding"
+         className={`absolute top-0 left-0 w-full h-full object-cover z-10 transition-opacity duration-500 ease-out ${
           isVideoPlaying ? 'opacity-0' : 'opacity-100'
         }`}
       />
@@ -61,7 +61,7 @@ const VolticSection1 = () => {
         {/* Tablet: text-7xl */}
         {/* Desktop: text-8xl (Reduced from 9xl) */}
         <h1 className="text-[#FF3131] font-black text-4xl sm:text-5xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tighter drop-shadow-[0_0_25px_rgba(255,49,49,0.6)]">
-          PURE <br /> ADRENAL
+          VOLTIC <br />ENERGY DRINK
         </h1>
 
         <span className="sr-only">
