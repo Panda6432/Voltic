@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   verification: {
-    google: 'your-google-verification-code-here', // Add after setting up Google Search Console
+    google: 'FK-P4ChYukghArc221F34PFfVBjOGdv0nwKQlw_TTKE', // Add after setting up Google Search Console
   },
   alternates: {
     canonical: '/',
