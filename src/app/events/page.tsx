@@ -1,11 +1,10 @@
 "use client";
 
-import { useState , useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import EventCard from "../components/EventCard";
 import EventModal from "../components/EventModal";
 import { useSearchParams } from "next/navigation";
-
 
 type Event = {
   id: string;
@@ -19,12 +18,12 @@ type Event = {
   highlights_url?: string; // for past events later
 };
 
-export default function EventsPage() {
+// Separate component that uses useSearchParams
+function EventsContent() {
   const [events, setEvents] = useState<Event[]>([]);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const searchParams = useSearchParams();
-const eventIdFromUrl = searchParams.get("id");
-
+  const eventIdFromUrl = searchParams.get("id");
 
   useEffect(() => {
     const loadEvents = async () => {
@@ -50,13 +49,12 @@ const eventIdFromUrl = searchParams.get("id");
         new Date(a.event_date).getTime() - new Date(b.event_date).getTime()
     );
 
-    useEffect(() => {
-  if (eventIdFromUrl && events.length) {
-    const found = events.find(e => e.id === eventIdFromUrl);
-    if (found) setSelectedEvent(found);
-  }
-}, [eventIdFromUrl, events]);
-
+  useEffect(() => {
+    if (eventIdFromUrl && events.length) {
+      const found = events.find((e) => e.id === eventIdFromUrl);
+      if (found) setSelectedEvent(found);
+    }
+  }, [eventIdFromUrl, events]);
 
   return (
     <section className="w-full min-h-screen bg-black text-white py-20 px-6">
@@ -88,5 +86,18 @@ const eventIdFromUrl = searchParams.get("id");
         />
       )}
     </section>
+  );
+}
+
+// Main component with Suspense boundary
+export default function EventsPage() {
+  return (
+    <Suspense fallback={
+      <div className="w-full min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="text-2xl font-orbitron">Loading Events...</div>
+      </div>
+    }>
+      <EventsContent />
+    </Suspense>
   );
 }
