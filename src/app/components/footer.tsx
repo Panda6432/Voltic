@@ -31,7 +31,7 @@ const Footer = () => {
                     Events
                 </Link>
                 <div className="h-[2px] w-12 bg-[#FF3131]/30"></div>
-                <Link href="/promotions" className="hover:text-black transition-all duration-300 w-fit">
+                <Link href="/promotion" className="hover:text-black transition-all duration-300 w-fit">
                     Promotions
                 </Link>
                 <div className="h-[2px] w-12 bg-[#FF3131]/30"></div>

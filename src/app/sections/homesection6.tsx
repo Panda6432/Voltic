@@ -8,24 +8,27 @@ const events = [
     category: "ESPORTS",
     title: "VOLTIC CYBER LEAGUE",
     date: "AUG 24 . TOKYO",
-    image: "/esports.webp", // You'll need to add this image later
-    color: "from-blue-600 to-purple-600"
+    image: "/esports.webp",
+    color: "from-blue-600 to-purple-600",
+    link: "https://voltic-energy.vercel.app/events?id=d3f96b73-94c0-4455-8b92-0be6cb60a050"
   },
   {
     id: 2,
     category: "MUSIC",
     title: "NEON NIGHTS FESTIVAL",
     date: "SEP 10 . BERLIN",
-    image: "/music.webp", // You'll need to add this image later
-    color: "from-red-600 to-orange-600"
+    image: "/music.webp",
+    color: "from-red-600 to-orange-600",
+    link: "https://voltic-energy.vercel.app/events?id=d74f3d66-ddbf-4311-80ea-e6b91411d9ad"
   },
   {
     id: 3,
     category: "ACTION",
     title: "URBAN RUSH FINALS",
     date: "OCT 05 . NEVADA",
-    image: "/race.webp", // You'll need to add this image later
-    color: "from-green-500 to-emerald-700"
+    image: "/race.webp",
+    color: "from-green-500 to-emerald-700",
+    link: "https://voltic-energy.vercel.app/events?id=37cf5b00-ebae-498d-b8c7-13603fd18102"
   }
 ];
 
@@ -38,10 +41,10 @@ const VolticSection6 = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* === SECTION HEADER (FIXED ALIGNMENT) === */}
+        {/* === SECTION HEADER === */}
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-6">
           
-          {/* Added 'items-start' to this container to force left alignment */}
+          {/* Title - Center on mobile, left on desktop */}
           <div className="flex flex-col items-center md:items-start w-full md:w-auto text-center md:text-left">
             
             <h2 className="font-orbitron font-black text-5xl md:text-8xl uppercase leading-none italic pr-6 pb-1">
@@ -49,12 +52,12 @@ const VolticSection6 = () => {
             </h2>
           </div>
        
-
-<Link href="/events">
-  <button className="font-orbitron border border-white/20 hover:bg-white hover:text-black transition-colors px-10 py-4 uppercase tracking-widest text-sm w-full">
-    View All Events
-  </button>
-</Link>
+          {/* Desktop Button - Hidden on mobile */}
+          <Link href="/events" className="hidden md:block">
+            <button className="font-orbitron border border-white/20 hover:bg-white hover:text-black transition-colors px-10 py-4 uppercase tracking-widest text-sm">
+              View All Events
+            </button>
+          </Link>
  
         </div>
 
@@ -62,9 +65,10 @@ const VolticSection6 = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
           
           {events.map((item) => (
-            <div 
-              key={item.id} 
-              className="group relative w-full h-[400px] md:h-full border border-white/10 overflow-hidden cursor-pointer bg-neutral-900"
+            <Link 
+              key={item.id}
+              href={item.link}
+              className="group relative w-full h-[400px] md:h-full border border-white/10 overflow-hidden cursor-pointer bg-neutral-900 block"
             >
               
               {/* IMAGE PLACEHOLDER (Replace 'bg-gradient...' with <Image /> later) */}
@@ -106,21 +110,18 @@ const VolticSection6 = () => {
                 </div>
 
               </div>
-            </div>
+            </Link>
           ))}
 
         </div>
 
         {/* Mobile Button (Visible only on mobile) */}
         <div className="mt-12 text-center md:hidden">
-      
-
-<Link href="/events">
-  <button className="font-orbitron border border-white/20 hover:bg-white hover:text-black transition-colors px-10 py-4 uppercase tracking-widest text-sm w-full">
-    View All Events
-  </button>
-</Link>
-
+          <Link href="/events">
+            <button className="font-orbitron border border-white/20 hover:bg-white hover:text-black transition-colors px-10 py-4 uppercase tracking-widest text-sm w-full">
+              View All Events
+            </button>
+          </Link>
         </div>
 
       </div>

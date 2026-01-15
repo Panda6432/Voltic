@@ -69,14 +69,13 @@ const SignupPage = () => {
       {/* SIGNUP CARD */}
       <div className="relative z-10 w-full max-w-md bg-[#0a0a0a] border border-[#FF3131]/30 p-8 md:p-10 shadow-[0_0_50px_rgba(255,49,49,0.1)]">
         
-        {/* BRAND LOGO */}
-        <div className="text-center mb-8">
+        {/* BRAND LOGO - CENTERED */}
+        <div className="flex items-center justify-center mb-8">
           <Link href="/">
-            <h1 className="font-black text-5xl text-[#FF3131] italic tracking-tighter uppercase cursor-pointer  transition-transform inline-block">
+            <h1 className="font-black text-5xl text-[#FF3131] italic tracking-tighter uppercase cursor-pointer transition-transform inline-block">
               VOLTIC
             </h1>
           </Link>
-         
         </div>
 
         {/* ERROR MESSAGE AREA */}
@@ -90,7 +89,7 @@ const SignupPage = () => {
         {/* SIGNUP FORM */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           
-          {/* Email Input */}
+          {/* Email Input - DISABLED */}
           <div className="relative group">
             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#FF3131] transition-colors" size={20} />
             <input
@@ -99,11 +98,12 @@ const SignupPage = () => {
               placeholder="EMAIL ADDRESS"
               value={formData.email}
               onChange={handleChange}
-              className="w-full bg-black border border-white/20 text-white pl-12 pr-4 py-3 focus:outline-none focus:border-[#FF3131] focus:ring-1 focus:ring-[#FF3131] transition-all placeholder:text-white/20 font-medium"
+              disabled
+              className="w-full bg-black border border-white/20 text-white pl-12 pr-4 py-3 focus:outline-none focus:border-[#FF3131] focus:ring-1 focus:ring-[#FF3131] transition-all placeholder:text-white/20 font-medium cursor-not-allowed opacity-50"
             />
           </div>
 
-          {/* Password Input */}
+          {/* Password Input - DISABLED */}
           <div className="relative group">
             <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#FF3131] transition-colors" size={20} />
             <input
@@ -112,11 +112,12 @@ const SignupPage = () => {
               placeholder="CREATE PASSWORD"
               value={formData.password}
               onChange={handleChange}
-              className="w-full bg-black border border-white/20 text-white pl-12 pr-4 py-3 focus:outline-none focus:border-[#FF3131] focus:ring-1 focus:ring-[#FF3131] transition-all placeholder:text-white/20 font-medium"
+              disabled
+              className="w-full bg-black border border-white/20 text-white pl-12 pr-4 py-3 focus:outline-none focus:border-[#FF3131] focus:ring-1 focus:ring-[#FF3131] transition-all placeholder:text-white/20 font-medium cursor-not-allowed opacity-50"
             />
           </div>
 
-          {/* Confirm Password Input */}
+          {/* Confirm Password Input - DISABLED */}
           <div className="relative group">
             <ShieldCheck className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#FF3131] transition-colors" size={20} />
             <input
@@ -125,7 +126,8 @@ const SignupPage = () => {
               placeholder="CONFIRM PASSWORD"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="w-full bg-black border border-white/20 text-white pl-12 pr-4 py-3 focus:outline-none focus:border-[#FF3131] focus:ring-1 focus:ring-[#FF3131] transition-all placeholder:text-white/20 font-medium"
+              disabled
+              className="w-full bg-black border border-white/20 text-white pl-12 pr-4 py-3 focus:outline-none focus:border-[#FF3131] focus:ring-1 focus:ring-[#FF3131] transition-all placeholder:text-white/20 font-medium cursor-not-allowed opacity-50"
             />
           </div>
 

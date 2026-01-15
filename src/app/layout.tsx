@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
-import LayoutWrapper from './components/LayoutWrapper'; // Import the new wrapper
+import LayoutWrapper from './components/LayoutWrapper';
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -8,16 +10,19 @@ const orbitron = Orbitron({
   display: "swap",
 });
 
-// Get site URL from environment variable
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://voltic-energy.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+
   title: {
     default: "Voltic Energy | Pure Adrenaline & Clean Energy Drink",
     template: "%s | Voltic Energy"
   },
-  description: "Fuel Your Ambition with Voltic Energy - Premium energy drink with bold flavors, clean ingredients, and zero sugar. Experience pure adrenaline and own the moment.",
+
+  description:
+    "Fuel Your Ambition with Voltic Energy - Premium energy drink with bold flavors, clean ingredients, and zero sugar. Experience pure adrenaline and own the moment.",
+
   keywords: [
     'energy drink',
     'voltic energy',
@@ -30,19 +35,22 @@ export const metadata: Metadata = {
     'fuel your ambition',
     'premium energy drink'
   ],
+
   authors: [{ name: 'Voltic Energy' }],
   creator: 'Voltic Energy',
   publisher: 'Voltic Energy',
+
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
+
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    siteName: 'Voltic Energy Drink',
+    siteName: 'Voltic Energy',
     title: 'Voltic Energy | Pure Adrenaline & Clean Energy Drink',
     description: 'Fuel Your Ambition with premium energy drink. Bold flavors, clean ingredients, zero sugar. Own the moment.',
     images: [
@@ -54,13 +62,15 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'Voltic Energy | Pure Adrenaline & Clean Energy',
     description: 'Fuel Your Ambition with premium energy drink. Bold flavors and clean ingredients.',
     images: ['/redvoltic.webp'],
-    creator: '@volticenergy', // Update with your actual Twitter handle
+    creator: '@volticenergy',
   },
+
   robots: {
     index: true,
     follow: true,
@@ -72,14 +82,22 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-icon.png',
+    icon: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+
+  manifest: "/site.webmanifest",
+
   verification: {
-    google: 'FK-P4ChYukghArc221F34PFfVBjOGdv0nwKQlw_TTKE', // Add after setting up Google Search Console
+    google: 'FK-P4ChYukghArc221F34PFfVBjOGdv0nwKQlw_TTKE',
   },
+
   alternates: {
     canonical: '/',
   },
@@ -92,11 +110,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Voltic Energy",
+              "url": siteUrl,
+              "logo": `${siteUrl}/web-app-manifest-512x512.png`,
+            }),
+          }}
+        />
+      </head>
+
       <body className={`${orbitron.className} antialiased bg-black`}>
-        {/* We pass the content to the Wrapper, which handles the Footer logic */}
         <LayoutWrapper>
-           {children}
+          {children}
         </LayoutWrapper>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -67,10 +67,7 @@ const VolticSection5 = () => {
         const scrolled = Math.abs(sectionTop);
         const totalScrollable = sectionHeight - windowHeight;
         
-        // --- THE FIX IS HERE ---
-        // We divide by 0.9 (90%) of the total distance.
-        // This means the animation will finish 'early' (at 90% scroll).
-        // The remaining 10% serves as a buffer where the card stays perfect.
+        // Animation finishes at 90% scroll for smoother completion
         const bufferFactor = 0.9;
         let progress = (scrolled / (totalScrollable * bufferFactor)) * (cards.length - 1);
         
@@ -99,9 +96,7 @@ const VolticSection5 = () => {
     // 1. TALL SECTION (500vh)
     <section ref={containerRef} className="relative h-[500vh] w-full bg-white">
       
-      {/* 2. THE VIEWPORT 
-          - z-20 allows Navbar (usually z-50) to stay on top
-      */}
+      {/* 2. THE VIEWPORT */}
       <div className={`
         w-full h-screen overflow-hidden flex items-center justify-center bg-white
         ${pinState === 'fixed' ? 'fixed top-0 left-0 z-20' : 'absolute'}
@@ -115,9 +110,7 @@ const VolticSection5 = () => {
           </h3>
         </div>
 
-        {/* 3. CARD STACK 
-            - Added 'pt-32' (Top Padding) to push cards down so they don't hit the Header/Navbar
-        */}
+        {/* 3. CARD STACK */}
         <div className="relative w-full h-full max-w-[1920px] mx-auto flex items-center justify-center pt-32 md:pt-0">
           
           {cards.map((card, index) => {
@@ -130,12 +123,11 @@ const VolticSection5 = () => {
             let style = {};
 
             if (isActive) {
-              // Active: Moves Center to Left
+              // Active: Moves Center to Left - NO ROTATION
               const translateX = -cardInternalProgress * 100; 
               const scale = 1 - (cardInternalProgress * 0.1); 
-              const rotate = -cardInternalProgress * 5; 
               style = {
-                transform: `translateX(${translateX}%) scale(${scale}) rotate(${rotate}deg)`,
+                transform: `translateX(${translateX}%) scale(${scale})`,
                 opacity: 1,
                 zIndex: 40 - index,
               };
@@ -161,7 +153,7 @@ const VolticSection5 = () => {
             return (
               <div
                 key={card.id}
-                className="absolute top-0 left-0 w-full h-full flex items-center justify-center p-4 md:p-8 transition-transform duration-100 ease-linear will-change-transform"
+                className="absolute top-0 left-0 w-full h-full flex items-center justify-center p-4 md:p-8 transition-all duration-300 ease-out will-change-transform"
                 style={style}
               >
                 {/* CARD DESIGN */}
