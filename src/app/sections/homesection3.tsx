@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ShoppingBag } from 'lucide-react';
+import Link from 'next/link';
 
 const VolticSection3 = () => {
   return (
@@ -46,9 +47,11 @@ const VolticSection3 = () => {
                  </span>
 
                  {/* 2. SQUARE BUY BUTTON (Right) */}
+                  <Link href="/products">
                  <button className="w-16 h-16 bg-[#9A1F1F] hover:bg-white text-white hover:text-black border-2 border-black flex items-center justify-center transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ">
                     <ShoppingBag size={28} strokeWidth={2.5} />
                  </button>
+                 </Link>
               </div>
            </div>
         </div>
@@ -94,9 +97,11 @@ const VolticSection3 = () => {
           </h3>
           
           {/* BUY NOW BUTTON (MOBILE) - Yellow theme, right-aligned */}
+          <Link href="/products">
           <button className="px-8 py-4 bg-[#CCFF00] hover:bg-[#FFD700] text-[#B8860B] font-black uppercase tracking-wider text-lg border-2 border-black shadow-[0_0_20px_rgba(255,215,0,0.4)] active:scale-95 transition-all">
             BUY NOW
           </button>
+          </Link>
       </div>
 
     </section>

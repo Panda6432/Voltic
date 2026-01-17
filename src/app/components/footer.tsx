@@ -35,7 +35,7 @@ const Footer = () => {
                     Promotions
                 </Link>
                 <div className="h-[2px] w-12 bg-[#FF3131]/30"></div>
-                <Link href="/contact" className="hover:text-black transition-all duration-300 w-fit">
+                <Link href="/#" className="hover:text-black transition-all duration-300 w-fit">
                     Contact Us
                 </Link>
             </div>
@@ -63,8 +63,8 @@ const Footer = () => {
       <div className="w-full border-t border-[#FF3131]/20 py-4 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-widest mb-4 md:mb-0">
         <p>&copy; 2026 Voltic Energy. All Rights Reserved.</p>
         <div className="flex gap-6 mt-2 md:mt-0">
-            <Link href="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-black transition-colors">Terms of Service</Link>
+            <Link href="/#" className="hover:text-black transition-colors">Privacy Policy</Link>
+            <Link href="/#" className="hover:text-black transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

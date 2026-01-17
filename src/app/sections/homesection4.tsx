@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const VolticSection4 = () => {
   return (
@@ -42,9 +43,11 @@ const VolticSection4 = () => {
           </p>
 
           <div className="pt-6 pointer-events-auto">
+            <Link href="/products">
             <button className="font-orbitron bg-white text-[#59A5EF] px-10 py-4 md:px-8 md:py-3 font-bold uppercase tracking-wider transition-transform duration-300 shadow-lg flex items-center gap-2">
                BUY NOW
             </button>
+            </Link>
           </div>
 
         </div>

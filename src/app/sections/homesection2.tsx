@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ShoppingBag } from 'lucide-react';
+import Link from 'next/link';
 
 const VolticSection2 = () => {
   return (
@@ -73,10 +74,13 @@ const VolticSection2 = () => {
               </h3>
               
               <div className="flex items-center gap-4">
+
                  {/* SQUARE BUY BUTTON */}
+                 <Link href="/products">
                  <button className="w-16 h-16 bg-[#CCFF00] hover:bg-white text-black border-2 border-black flex items-center justify-center transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                     <ShoppingBag size={28} strokeWidth={2.5} />
                  </button>
+                  </Link>
                  <span className="font-bold text-white uppercase tracking-widest text-sm bg-black/50 px-2 py-1 backdrop-blur-sm">
                     buy Now
                  </span>
@@ -91,15 +95,18 @@ const VolticSection2 = () => {
       {/* MOVED DOWN: Changed bottom-24 to bottom-12 */}
       <div className="absolute bottom-12 left-8 w-full flex flex-col items-start gap-4 z-30 lg:hidden">
           
-          {/* METALLIC RED TEXT EFFECT (Mobile) */}
+            {/* METALLIC RED TEXT EFFECT (Mobile) - Split into two lines */}
           <h3 className="text-5xl font-black italic uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(0,0,0,20)] pr-6 pb-1 text-transparent bg-clip-text bg-gradient-to-t from-[#8B0000] via-[#FF0000] to-[#FF4D4D]">
-            RED INFERNO
+            <div>RED</div>
+            <div>INFERNO</div>
           </h3>
           
           {/* BUY NOW BUTTON (MOBILE) */}
+          <Link href="/products">
           <button className="px-8 py-4 bg-[#A61C1A] hover:bg-[#8B0000] text-[#FF0000] font-black uppercase tracking-wider text-lg border-2 border-black shadow-[0_0_20px_rgba(255,49,49,0.4)] active:scale-95 transition-all">
             BUY NOW
           </button>
+          </Link>
       </div>
 
     </section>
