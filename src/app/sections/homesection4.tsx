@@ -6,11 +6,7 @@ const VolticSection4 = () => {
   return (
     <section className="w-full h-screen relative flex items-center justify-center bg-[#59A5EF] overflow-hidden">
       
-      {/* MOBILE/TAB BACKGROUND IMAGE WRAPPER (Hidden on Desktop) */}
-      {/* - Added 'pl-16' (padding-left): Pushes the image away from the left edge.
-          - Added 'justify-end': Helps align it towards the right so it doesn't get squished.
-          - 'md:hidden': Ensures this doesn't affect the desktop view at all.
-      */}
+    
       <div className="absolute inset-0 flex items-center justify-end pl-16 md:hidden z-0 pointer-events-none">
         <div className="relative w-full h-[70%]"> 
           <Image
@@ -24,10 +20,8 @@ const VolticSection4 = () => {
         </div>
       </div>
 
-      {/* MAIN CONTENT GRID */}
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full px-6 relative z-10">
         
-        {/* LEFT SIDE: Text Content */}
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-6 text-white">
           
           <h3 className="font-orbitron text-2xl md:text-3xl tracking-widest uppercase opacity-90">
@@ -52,8 +46,7 @@ const VolticSection4 = () => {
 
         </div>
 
-        {/* RIGHT SIDE: Desktop Image (Hidden on Mobile) */}
-        {/* Same as before: Pushed to the right edge */}
+
         <div className="hidden md:flex justify-end h-[80%] relative translate-x-16 lg:translate-x-32">
           <div className="relative w-full h-full">
             <Image

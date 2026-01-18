@@ -8,13 +8,11 @@ const Footer = () => {
       className="
         bg-white text-[#FF3131] w-full overflow-hidden md:fixed md:bottom-0 md:h-[400px] md:z-0 md:py-0 flex flex-col justify-between"
     >
-      {/* Top Border Line - Now sits at the absolute top */}
       <div className="w-full h-1 bg-[#FF3131]"></div>
 
       <div className="container mx-auto px-4 md:px-8 h-full flex flex-col justify-center">
         
         {/* Main Links Section */}
-        {/* We keep py-10 here to give spacing INSIDE the footer, below the red line */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start md:items-center w-full py-10 md:py-0">
             
             {/* Column 1: Brand / Slogan */}

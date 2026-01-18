@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Loader2, AlertCircle, ShieldCheck, RefreshCw } from 'lucide-react';
 import { supabase } from '@/lib/supabaseClient';
 
-// Separate component that uses useSearchParams
 function VerifyOtpContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -32,9 +31,9 @@ function VerifyOtpContent() {
       .single();
 
     if (data) {
-      router.push('/'); // existing user
+      router.push('/'); 
     } else {
-      router.push('/profile-setup'); // new user
+      router.push('/profile-setup'); 
     }
   };
 
@@ -149,7 +148,6 @@ function VerifyOtpContent() {
   );
 }
 
-// Main component with Suspense boundary
 const VerifyOtpPage = () => {
   return (
     <Suspense fallback={

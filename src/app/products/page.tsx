@@ -20,7 +20,7 @@ type ProductData = {
   name: string;
   image: string;
   basePrice: number;
-  imgBgColor: string; // Custom background color field
+  imgBgColor: string; 
   info: {
     brief: string;
     features: string[];
@@ -36,7 +36,7 @@ const products: ProductData[] = [
     name: 'RED INFERNO',
     image: '/redinferno-volticenergy.webp',
     basePrice: 3.99,
-    imgBgColor: '#991F18', // Custom Red Background
+    imgBgColor: '#991F18', 
     info: {
       brief: "A blazing blend of tart berries and intense energy designed for high-octane moments. Ignite your senses with immediate power deployment.",
       features: [
@@ -54,7 +54,7 @@ const products: ProductData[] = [
     name: 'BLUE FROST',
     image: '/bluefrost-volticenergy.webp',
     basePrice: 3.99,
-    imgBgColor: '#5DA4E8', // Custom Blue Background
+    imgBgColor: '#5DA4E8', 
     info: {
       brief: "Cool, crisp, and refreshing. Blue Frost delivers sustainable energy with a sharp blueberry bite to keep you focused under pressure.",
       features: [
@@ -72,7 +72,7 @@ const products: ProductData[] = [
     name: 'YELLOW VOLTAGE',
     image: '/yellowvoltage-volticenergy.webp',
     basePrice: 3.99,
-    imgBgColor: '#CFD806', // Custom Yellow Background
+    imgBgColor: '#CFD806', 
     info: {
       brief: "Electric citrus surge. The ultimate wake-up call delivering shockingly fast reflexes and vibrant, tangy flavor.",
       features: [
@@ -87,7 +87,6 @@ const products: ProductData[] = [
   }
 ];
 
-// --- BIG CARD COMPONENT ---
 const BigProductCard = ({ product }: { product: ProductData }) => {
   const [quantity, setQuantity] = useState(0);
   const [activeTab, setActiveTab] = useState<'info' | 'nutrition'>('info');
@@ -99,7 +98,6 @@ const BigProductCard = ({ product }: { product: ProductData }) => {
   const totalPrice = (product.basePrice * quantity).toFixed(2);
 
   return (
-    // CARD WRAPPER:
     <article 
       className="w-full max-w-7xl mx-auto bg-white border-[4px] border-black h-[900px] md:h-[600px] flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.5)]"
       itemScope 
@@ -107,7 +105,6 @@ const BigProductCard = ({ product }: { product: ProductData }) => {
       role="listitem"
       aria-label={`${product.name} energy drink product`}
     >
-      {/* Hidden structured data for SEO */}
       <meta itemProp="name" content={product.name} />
       <meta itemProp="description" content={product.info.brief} />
       <meta itemProp="image" content={product.image} />
@@ -121,7 +118,6 @@ const BigProductCard = ({ product }: { product: ProductData }) => {
       <div className="flex flex-col md:grid md:grid-cols-[30%_70%] flex-grow h-full overflow-hidden">
 
         {/* --- LEFT SIDE: IMAGE --- */}
-        {/* Applied custom background color via inline style */}
         <div 
             className="relative h-[450px] md:h-full border-b-[4px] md:border-b-0 md:border-r-[4px] border-black flex items-center justify-center overflow-hidden p-0"
             style={{ backgroundColor: product.imgBgColor }}
@@ -129,7 +125,6 @@ const BigProductCard = ({ product }: { product: ProductData }) => {
             aria-label={`${product.name} product image`}
         >
            <div className="relative w-full h-full">
-             {/* FIXED: Removed 'drop-shadow-2xl' so there is no shadow on the can */}
              <Image
                src={product.image}
                alt={`${product.name} - ${product.info.brief.split('.')[0]} energy drink can`}

@@ -13,7 +13,6 @@
   scrollbar-width: none;
 }
 
-/* You can remove the @theme block if you are only using Orbitron everywhere */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -29,5 +28,4 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  /* DELETE the font-family line here. Let layout.tsx handle it. */
 }

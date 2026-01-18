@@ -1,8 +1,6 @@
 import React from 'react';
 
-// Importing the sections from the "sections" folder
-// Note: Ensure the function names inside these files match what you import, 
-// or if they are "export default", you can name them whatever you want here.
+
 import VolticSection1 from './sections/homesection1'; 
 import VolticSection2 from './sections/homesection2';
 import VolticSection3 from './sections/homesection3';

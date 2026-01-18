@@ -3,7 +3,7 @@ import React from "react";
 export default function EventCardSkeleton() {
   return (
     <div className="relative w-[350px] h-[450px] md:w-[420px] md:h-[600px] border border-white/10 bg-neutral-900 flex-shrink-0 animate-pulse overflow-hidden">
-      {/* Background Placeholder (Darker grey to mimic image load) */}
+      {/* Background Placeholder */}
       <div className="absolute inset-0 bg-white/5"></div>
 
       {/* CONTENT PLACEHOLDERS */}

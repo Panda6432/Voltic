@@ -21,7 +21,7 @@ type Event = {
 
 function EventsContent() {
   const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true); // Added loading state
+  const [loading, setLoading] = useState(true); 
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const searchParams = useSearchParams();
   const eventIdFromUrl = searchParams.get("id");
@@ -36,7 +36,7 @@ function EventsContent() {
         .order("event_date", { ascending: false });
 
       setEvents(data || []);
-      setLoading(false); // Stop loading once data is fetched
+      setLoading(false); 
     };
 
     loadEvents();
@@ -87,7 +87,6 @@ function EventsContent() {
       <h2 className="font-orbitron text-3xl mt-20 mb-6">Past Events</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {loading ? (
-          // Show 3 skeletons in grid while loading
           <>
             <EventCardSkeleton />
             <EventCardSkeleton />

@@ -18,17 +18,13 @@ const PromotionsPage = () => {
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center p-4 py-20 md:py-25 relative overflow-hidden">
       
-      {/* === BACKGROUND GLOW === */}
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#FF3131] opacity-10 blur-[150px] pointer-events-none"></div>
 
-      {/* === BIG RECTANGLE CARD === */}
       <div className="relative z-10 w-full max-w-7xl min-h-[600px] mt-20 bg-[#0a0a0a] border border-[#FF3131]/30 flex flex-col md:flex-row shadow-[0_0_60px_rgba(255,49,49,0.1)]">
         
-        {/* === LEFT SIDE: EMPTY SPACE === */}
         <div className="hidden md:flex w-1/3 border-r border-[#FF3131]/20 relative bg-[url('/noise.png')]">
         </div>
 
-        {/* === RIGHT SIDE: CONTENT === */}
         <div className="flex-1 p-6 md:p-20 flex flex-col justify-center items-start">
 
             <h2 className="text-[#FF3131] font-bold tracking-[0.2em] uppercase mb-4 text-xs md:text-lg">

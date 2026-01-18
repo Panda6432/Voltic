@@ -91,7 +91,7 @@ const LoginPage = () => {
 
       <div className="relative z-10 w-full max-w-md bg-[#0a0a0a] border border-[#FF3131]/30 p-8 md:p-10 shadow-[0_0_50px_rgba(255,49,49,0.1)]">
         
-        {/* BRAND LOGO - CENTERED */}
+        {/* BRAND LOGO - */}
         <div className="flex items-center justify-center mb-8">
           <Link href="/">
             <h1 className="font-black text-5xl text-[#FF3131] italic tracking-tighter uppercase cursor-pointer transition-transform inline-block">

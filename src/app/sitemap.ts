@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // IMPORTANT: Replace with your actual Vercel domain after deployment
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://voltic-energy.vercel.app';
 
   return [
